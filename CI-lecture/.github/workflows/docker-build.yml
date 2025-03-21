@@ -14,3 +14,13 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t mypythonapp .
+
+        - name: Install dependencies
+        run: |
+          pip install -r ./CI-lecture/requirements.txt
+
+      - name: Run tests
+        run: |
+          python -m pytest ./CI-lecture/test_fizzbuzz.py
+
+
